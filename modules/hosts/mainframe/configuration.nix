@@ -10,11 +10,16 @@
 
     {
       imports = with self.nixosModules; [
+        global
         mainframeHConfig
 
-        tailscale
-        sops
       ];
+
+      local = {
+        tailscale.enable = true;
+
+        sops.enable = true;
+      };
 
       # Use the systemd-boot EFI boot loader.
       boot.loader.systemd-boot.enable = true;
@@ -35,16 +40,7 @@
       };
 
       environment.systemPackages = with pkgs; [
-        helix
-        git
-        curl
-        nil
-        nixd
-        xsel
-        xclip
       ];
-
-      services.xserver.enable = true;
 
       services.openssh = {
         enable = true;
