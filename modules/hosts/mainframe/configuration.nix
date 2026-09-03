@@ -10,7 +10,9 @@
 
     {
       imports = with self.nixosModules; [
+        inputs.sops-nix.nixosModules.sops
         mainframeHConfig
+
         tailscale
       ];
 
@@ -38,8 +40,12 @@
         curl
         nil
         nixd
+        xsel
+        xclip
       ];
 
+      services.xserver.enable = true;
+      
       services.openssh = {
         enable = true;
         settings = {
