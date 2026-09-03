@@ -17,7 +17,6 @@
 
       local = {
         tailscale.enable = true;
-
         sops.enable = true;
       };
 

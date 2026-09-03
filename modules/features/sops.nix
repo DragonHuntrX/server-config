@@ -21,7 +21,7 @@
           age
         ];
 
-        sops.defaultSopsFile = ./secrets/secrets.yaml;
+        sops.defaultSopsFile = ../../secrets/secrets.yaml;
         sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
         environment.variables.SOPS_AGE_KEY_CMD = "${pkgs.ssh-to-age}/bin/ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key";
