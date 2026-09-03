@@ -10,10 +10,10 @@
 
     {
       imports = with self.nixosModules; [
-        inputs.sops-nix.nixosModules.sops
         mainframeHConfig
 
         tailscale
+        sops
       ];
 
       # Use the systemd-boot EFI boot loader.
@@ -45,7 +45,7 @@
       ];
 
       services.xserver.enable = true;
-      
+
       services.openssh = {
         enable = true;
         settings = {
