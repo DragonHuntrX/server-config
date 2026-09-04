@@ -4,6 +4,7 @@
     imports = with self.nixosModules; [
       tailscale
       sops
+      incus
     ];
 
     environment.systemPackages = with pkgs; [
