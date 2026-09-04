@@ -18,6 +18,7 @@
       local = {
         tailscale.enable = true;
         sops.enable = true;
+        incus.enable = true;
       };
 
       # Use the systemd-boot EFI boot loader.
