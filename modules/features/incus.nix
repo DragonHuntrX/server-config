@@ -13,10 +13,10 @@
       config = lib.mkIf cfg.enable {
         virtualisation.incus = {
           enable = true;
-          ui.enable = true;
         };
         networking.nftables.enable = true;
         networking.firewall.trustedInterfaces = [ "incusbr0" ];
+        networking.firewall.allowedTCPPorts = [ 8443 ];
       };
       options.local.incus = {
         enable = lib.mkEnableOption "Enable the incus server";
